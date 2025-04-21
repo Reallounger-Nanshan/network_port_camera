@@ -1,0 +1,11 @@
+<launch>
+    <node name="double_light_thermal_rtsp_ffmepg" pkg="network_port_camera" type="rtsp_ffmpeg.py" output="screen">
+        <param name="rtsp_url" value="rtsp://admin:abcd1234@192.168.1.19:554/cam/realmonitor?channel=1&amp;subtype=0"/>
+        <param name="is_rgb" value="False"/>
+        <param name="is_scale" value="False"/>
+        <param name="new_size" value= "960 540"/>
+        <!-- new_size: "width height "-->
+        <param name="show_img" value="False"/>
+        <param name="topic_pub_name" value="/double_light/thermal/rtsp_image"/>
+    </node>
+</launch>

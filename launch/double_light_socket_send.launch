@@ -1,0 +1,5 @@
+<launch>
+    <node name="double_light_socket_send" pkg="network_port_camera" type="double_light_socket_send.py" output="screen">
+        <param name="topic_sub_name" value="/double_light/control_command"/>
+    </node>
+</launch>

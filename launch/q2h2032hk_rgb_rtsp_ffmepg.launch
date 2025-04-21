@@ -1,0 +1,11 @@
+<launch>
+    <node name="q2h2032hk_thermal_rtsp_ffmepg" pkg="network_port_camera" type="rtsp_ffmpeg.py" output="screen">
+        <param name="rtsp_url" value="rtsp://admin:abcd1234@192.168.1.64:554/h264/ch1/main/av_stream"/>
+        <param name="is_rgb" value="True"/>
+        <param name="is_scale" value="False"/>
+        <param name="new_size" value= "960 540"/>
+        <!-- new_size: "width height "-->
+        <param name="show_img" value="False"/>
+        <param name="topic_pub_name" value="/q2h2032hk/rgb/rtsp_image"/>
+    </node>
+</launch>

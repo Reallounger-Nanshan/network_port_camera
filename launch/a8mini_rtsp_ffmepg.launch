@@ -1,0 +1,11 @@
+<launch>
+    <node name="a8mini_rtsp_ffmpeg" pkg="network_port_camera" type="rtsp_ffmpeg.py" output="screen">
+        <param name="host" value="rtsp://192.168.144.25:8554/main.264"/>
+        <param name="is_rgb" value="True"/>
+        <param name="is_scale" value="False"/>
+        <param name="new_size" value= "960 540"/>
+        <!-- new_size: "width height "-->
+        <param name="show_img" value="False"/>
+        <param name="topic_pub_name" value="/a8mini/rtsp_image"/>
+    </node>
+</launch>

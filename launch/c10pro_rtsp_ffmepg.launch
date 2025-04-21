@@ -1,0 +1,11 @@
+<launch>
+    <node name="c10pro_rtsp_ffmpeg" pkg="network_port_camera" type="rtsp_ffmpeg.py" output="screen">
+        <param name="rtsp_url" value="rtsp://192.168.144.108:554/stream=0"/>
+        <param name="is_rgb" value="True"/>
+        <param name="is_scale" value="True"/>
+        <param name="new_size" value= "960 540"/>
+        <!-- new_size: "width height "-->
+        <param name="show_img" value="False"/>
+        <param name="topic_pub_name" value="/c10pro/rtsp_image"/>
+    </node>
+</launch>

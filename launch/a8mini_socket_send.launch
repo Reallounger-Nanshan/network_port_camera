@@ -1,0 +1,8 @@
+<launch>
+    <node name="a8mini_socket_send" pkg="network_port_camera" type="a8mini_socket_send.py" output="screen">
+        <param name="host" value="192.168.144.25"/>
+        <param name="port" value="37260"/>
+        <param name="topic_sub_name" value="/a8mini/control_command"/>
+        <param name="topic_pub_name" value="/a8mini/camera_pose"/>
+    </node>
+</launch>

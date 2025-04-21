@@ -1,0 +1,8 @@
+<launch>
+    <node name="khy10g613_rtsp_ffmepg" pkg="network_port_camera" type="khy10g613_socket_send.py" output="screen">
+        <param name="host" value="192.168.144.108"/>
+        <param name="port" value="9003"/>
+        <param name="topic_sub_name" value="/khy10g613/control_command"/>
+        <!--param name="topic_pub_name" value="/khy10g613/camera_pose"/-->
+    </node>
+</launch>

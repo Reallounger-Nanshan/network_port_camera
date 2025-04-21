@@ -1,0 +1,8 @@
+<launch>
+    <node name="khy10g613_thermal_rtsp_ffmepg" pkg="network_port_camera" type="rtsp_ffmpeg.py" output="screen">
+        <param name="rtsp_url" value="rtsp://192.168.1.25:554/stream=1"/>
+        <param name="is_rgb" value="False"/>
+        <param name="show_img" value="False"/>
+        <param name="topic_pub_name" value="/khy10g613/thermal/rtsp_image"/>
+    </node>
+</launch>
