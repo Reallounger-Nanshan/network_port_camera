@@ -94,7 +94,6 @@ class RTSP():
                 if self.pub_raw_img:
                     self.ros_img.data = frame.tobytes()
                     self.raw_img_pub.publish(self.ros_img)
-
                 if self.pub_compressed:
                     compressed_msg = CompressedImage()
                     compressed_msg.header.stamp = rospy.Time.now()
