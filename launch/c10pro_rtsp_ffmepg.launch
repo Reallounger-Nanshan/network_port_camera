@@ -3,9 +3,10 @@
         <param name="rtsp_url" value="rtsp://192.168.144.108:554/stream=0"/>
         <param name="is_rgb" value="True"/>
         <param name="downsample" value="1"/>  <!-- 1 / downsample -->
+        <param name="is_flip" value="False"/>
+        <param name="flip_way" value="-1"/>  <!-- 0: X-axis flip; 1: Y-axis flip; -1: Both are flipped -->
         <param name="is_scale" value="True"/>
-        <param name="new_size" value= "960 540"/>
-        <!-- new_size: "width height "-->
+        <param name="new_size" value= "960 540"/>  <!-- new_size: "width height "-->
         <param name="pub_raw_img" value="True"/>
         <param name="raw_img_pub_name" value="/c10pro/rtsp_image"/>
         <param name="pub_compressed" value="True"/>

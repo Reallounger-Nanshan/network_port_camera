@@ -13,9 +13,13 @@ class RTSP():
         self.rtsp_url = rospy.get_param("~rtsp_url")
         self.is_rgb = rospy.get_param("~is_rgb", True)
         self.downsample = int(rospy.get_param("~downsample"))
+        self.is_flip = rospy.get_param("~is_flip")
+        if self.is_flip:
+            self.flip_way = rospy.get_param("~flip_way")
         self.is_scale = rospy.get_param("~is_scale", True)
-        new_size = rospy.get_param("~new_size", True) if self.is_scale else None
-        self.new_imgsz = tuple(int(new_shape) for new_shape in new_size.split(" ")) if self.is_scale else None
+        if self.is_scale:
+            new_size = rospy.get_param("~new_size", True)
+            self.new_imgsz = tuple(int(new_shape) for new_shape in new_size.split(" "))
         self.pub_raw_img = rospy.get_param("~pub_raw_img")
         if self.pub_raw_img:
             raw_img_pub_name = rospy.get_param("~raw_img_pub_name")
@@ -79,6 +83,9 @@ class RTSP():
                     .reshape([self.original_height, self.original_width, 3])
                 )
         
+                if self.is_flip:
+                    in_frame = cv2.flip(in_frame, self.flip_way)
+
                 # Convert BGR
                 if self.is_rgb:
                     frame = cv2.cvtColor(in_frame, cv2.COLOR_RGB2BGR)
