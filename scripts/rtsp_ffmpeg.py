@@ -16,6 +16,7 @@ class RTSP():
         self.is_scale = rospy.get_param("~is_scale", True)
         new_size = rospy.get_param("~new_size", True) if self.is_scale else None
         self.new_imgsz = tuple(int(new_shape) for new_shape in new_size.split(" ")) if self.is_scale else None
+        self.pub_raw_img = rospy.get_param("~pub_raw_img")
         if self.pub_raw_img:
             raw_img_pub_name = rospy.get_param("~raw_img_pub_name")
             self.raw_img_pub = rospy.Publisher(raw_img_pub_name, Image, queue_size = 1)
