@@ -32,6 +32,23 @@ class KHY10G613():
         elif command_msg.data == 4:
             information = b"#TPUD2wIMG0349"
 
+        # One-click return to middle
+        elif command_msg.data == 5:
+            information = b"#TPUG2wPTZ056F"
+
+        # 
+        elif command_msg.data == 6:
+            information = b"#tpUG6wGIY34BC1E9B"
+
+        # 
+        elif command_msg.data == 7:
+            information = b"#tpUG6wGIYDCD81EB2"
+
+        # The positive direction is 90 degrees
+        # Hoisting is downward, conversely upward
+        elif command_msg.data == 8:
+            information = b"#tpUG6wGIP23281E75"
+
         return information
 
 

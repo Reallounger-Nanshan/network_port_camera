@@ -1,8 +1,16 @@
 <launch>
     <node name="khy10g613_thermal_rtsp_ffmepg" pkg="network_port_camera" type="rtsp_ffmpeg.py" output="screen">
         <param name="rtsp_url" value="rtsp://192.168.1.25:554/stream=1"/>
-        <param name="is_rgb" value="False"/>
+        <param name="is_rgb" value="True"/>
+        <param name="downsample" value="2"/>  <!-- 1 / downsample -->
+        <param name="is_scale" value="False"/>
+        <param name="new_size" value= "960 540"/>
+        <!-- new_size: "width height "-->
+        <param name="pub_raw_img" value="True"/>
+        <param name="raw_img_pub_name" value="/khy10g613/thermal/rtsp_image"/>
+        <param name="pub_compressed" value="True"/>
+        <param name="compressed_quality" value="75"/>
+        <param name="compressed_pub_name" value="/khy10g613/thermal/rtsp_image/compressed"/>
         <param name="show_img" value="False"/>
-        <param name="topic_pub_name" value="/khy10g613/thermal/rtsp_image"/>
     </node>
 </launch>
